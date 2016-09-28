@@ -1,6 +1,6 @@
 class DecodingsController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  
+
   def index
   end
 
@@ -8,6 +8,6 @@ class DecodingsController < ApplicationController
   end
 
   def show
-    @message = Caesar.decode(params['shift'], params['message'])
+    @message = Caesar.decode(params['shift'], params['message'].upcase)
   end
 end
